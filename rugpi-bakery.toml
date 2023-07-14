@@ -1,0 +1,4 @@
+include = ["set-hostname", "zsh"]
+
+[parameters.set-hostname]
+hostname = "rugpi-example"
