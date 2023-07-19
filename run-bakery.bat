@@ -1,5 +1,5 @@
 docker run --rm --privileged ^
-    -v .:/workspace ^
+    -v .:/project ^
     -v /dev:/dev ^
     ghcr.io/silitics/rugpi-bakery:latest ^
     %*
