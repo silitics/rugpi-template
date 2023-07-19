@@ -5,7 +5,7 @@ set -euo pipefail
 DOCKER=${DOCKER:-docker}
 
 $DOCKER run --rm --privileged \
-    -v .:/project \
+    -v "$(pwd)":/project \
     -v /dev:/dev \
     ghcr.io/silitics/rugpi-bakery:latest \
     "$@"
