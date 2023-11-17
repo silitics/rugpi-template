@@ -1,4 +1,5 @@
 recipes = ["set-hostname", "persist-root-home", "ssh", "zsh"]
+include_firmware = "pi4"
 
 [parameters.set-hostname]
 hostname = "rugpi-template"
