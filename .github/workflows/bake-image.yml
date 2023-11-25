@@ -1,6 +1,7 @@
 name: Bake Image
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
