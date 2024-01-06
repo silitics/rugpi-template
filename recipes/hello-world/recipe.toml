@@ -1,1 +1,1 @@
-dependencies = ["nginx"]
+dependencies = ["rugpi-extra/nginx"]

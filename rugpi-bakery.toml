@@ -1,19 +1,26 @@
-recipes = ["set-hostname", "persist-root-home", "ssh", "zsh"]
+recipes = [
+    "rugpi/raspberrypi",  # Prepares the Raspberry Pi base image for usage with Rugpi.
+    "rugpi/set-hostname",  # Sets a static hostname (see parameters below).
+    "rugpi/persist-root-home",  # Persists the home directory of the root user.
+    "rugpi/ssh",  # Configures SSH.
+    "rugpi-extra/zsh"  # Installs ZSH.
+]
+# Include the firmware update for Raspberry Pi 4 and CM4.
 include_firmware = "pi4"
 
 [repositories]
 rugpi-extra = { git = "https://github.com/silitics/rugpi-extra.git" }
 
-[parameters.set-hostname]
+[parameters."rugpi/set-hostname"]
 hostname = "rugpi-template"
 
-[parameters.apt-cleanup]
+[parameters."rugpi/apt-cleanup"]
 autoremove = true
 
-[parameters.ssh]
+[parameters."rugpi/ssh"]
 root_authorized_keys = """
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC2tN+ZL8lGnx8rW+vm9ukX1uhKE7GREHitIVxIN3fVh406ksaZzY4FB7JqMqor4SBpR/Eigm6mSSE6KdwSYYC99hakLVvFUG6b6xvB7gOgre8M0JuL9XwBfaUfNln6Hl2Xirlml61JwOWa8Lh+T8mquw9OUK20tkXNPrigVKH+RMQA2V0AQrHnzo9GXMT5HEdAfaVVhL8S1inlKixiPbnvt+nWUSoKGLo+I08w5ZKI88C+saP6VqFiinp57uF0F3oqwcupZe0j6vxGuN5hFg8YGcICFnjXUAVjds8pfcf7aImvYZdp192jC9JAfzx3LzJZLn+kY9hIQkqip/tfTtp56eBb+j9i07PhrDsGiZVNOWf+YG3Cw5Ix6ltOL0dvF1/xFG7O+CGz62w8Y925ytuGgzBkVJ090eznnCjpw+lhNiNFmoqUjiJFjs/VSrqmC5bqdRrqF7YIs61uKl/EyAZaEoHZJazUFFauOjjPK0ksVbAAfqxG4nFmOG0URemSvNE= koehlma@Zaylee
 """
 
-[parameters.rugpi-ctrl]
+[parameters."rugpi/rugpi-ctrl"]
 rugpi_admin = true  # Enable Rugpi Admin.
