@@ -1,34 +1,6 @@
 [repositories]
 rugpi-extra = { git = "https://github.com/silitics/rugpi-extra.git" }
 
-[layers.base]
-url = "https://downloads.raspberrypi.com/raspios_lite_arm64/images/raspios_lite_arm64-2023-12-11/2023-12-11-raspios-bookworm-arm64-lite.img.xz"
-
-[layers.customized]
-parent = "base"
-recipes = [
-    "core/raspberrypi",  # Prepares the Raspberry Pi base image for usage with Rugpi.
-    "core/set-hostname",  # Sets a static hostname (see parameters below).
-    "core/persist-root-home",  # Persists the home directory of the root user.
-    "core/ssh",  # Configures SSH.
-    "rugpi-extra/zsh",  # Installs ZSH.
-    "hello-world",  # Enable the `hello-world` recipe installing the static webpage.
-]
-
-[layers.customized.parameters."core/set-hostname"]
-hostname = "rugpi-template"
-
-[layers.customized.parameters."core/apt-cleanup"]
-autoremove = true
-
-[layers.customized.parameters."core/ssh"]
-root_authorized_keys = """
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC2tN+ZL8lGnx8rW+vm9ukX1uhKE7GREHitIVxIN3fVh406ksaZzY4FB7JqMqor4SBpR/Eigm6mSSE6KdwSYYC99hakLVvFUG6b6xvB7gOgre8M0JuL9XwBfaUfNln6Hl2Xirlml61JwOWa8Lh+T8mquw9OUK20tkXNPrigVKH+RMQA2V0AQrHnzo9GXMT5HEdAfaVVhL8S1inlKixiPbnvt+nWUSoKGLo+I08w5ZKI88C+saP6VqFiinp57uF0F3oqwcupZe0j6vxGuN5hFg8YGcICFnjXUAVjds8pfcf7aImvYZdp192jC9JAfzx3LzJZLn+kY9hIQkqip/tfTtp56eBb+j9i07PhrDsGiZVNOWf+YG3Cw5Ix6ltOL0dvF1/xFG7O+CGz62w8Y925ytuGgzBkVJ090eznnCjpw+lhNiNFmoqUjiJFjs/VSrqmC5bqdRrqF7YIs61uKl/EyAZaEoHZJazUFFauOjjPK0ksVbAAfqxG4nFmOG0URemSvNE= koehlma@Zaylee
-"""
-
-[layers.customized.parameters."core/rugpi-ctrl"]
-rugpi_admin = true  # Enable Rugpi Admin.
-
 [images.rpi4]
 layer = "customized"
 # Include the firmware update for Raspberry Pi 4 and CM4.
