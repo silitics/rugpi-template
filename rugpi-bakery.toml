@@ -3,7 +3,8 @@ recipes = [
     "core/set-hostname",  # Sets a static hostname (see parameters below).
     "core/persist-root-home",  # Persists the home directory of the root user.
     "core/ssh",  # Configures SSH.
-    "rugpi-extra/zsh"  # Installs ZSH.
+    "rugpi-extra/zsh",  # Installs ZSH.
+    "hello-world",  # Enable the `hello-world` recipe installing the static webpage.
 ]
 # Include the firmware update for Raspberry Pi 4 and CM4.
 include_firmware = "pi4"
