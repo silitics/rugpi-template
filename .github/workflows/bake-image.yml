@@ -3,12 +3,6 @@ name: Bake Image
 on:
   workflow_dispatch:
   push:
-    # branches:
-    #   - main
-    #   - ci
-
-env:
-   RUGPI_VERSION: "feat-layers"
 
 jobs:  
   bake-image:
