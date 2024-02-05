@@ -3,6 +3,7 @@ rugpi-extra = { git = "https://github.com/silitics/rugpi-extra.git", branch = "v
 
 [images.tryboot]
 layer = "customized"
+include_firmware = "none"
 
 # A specific image including the firmware update for Raspberry Pi 4 and CM4.
 [images.pi4]
