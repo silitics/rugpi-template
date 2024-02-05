@@ -14,9 +14,11 @@ include_firmware = "pi4"
 [images.u-boot]
 layer = "customized"
 boot_flow = "u-boot"
+include_firmware = "none"
 
 # An `armhf` image for older Raspberry Pi's using the U-Boot boot flow.
 [images.u-boot-armhf]
 layer = "customized"
 architecture = "armhf"
 boot_flow = "u-boot"
+include_firmware = "none"
