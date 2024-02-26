@@ -13,6 +13,7 @@ recipes = [
     "rugpi-extra/zsh",  # Installs ZSH.
     "rugpi-extra/nginx",  # Installs Nginx.
     "hello-world",  # Enable the `hello-world` recipe installing the static webpage.
+    "custom-packages"
 ]
 
 [parameters."core/set-hostname"]
